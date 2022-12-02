@@ -1,0 +1,20 @@
+const { DataTypes } = require('sequelize');
+const db = require('../utils/database');
+const Courses = require('./courses.models');
+
+const Categories = db.define("categories", {
+    id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+        allowNull: false,
+    },
+    name: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    }
+}, {
+    timestamps: false
+})
+
+module.exports = Categories;
